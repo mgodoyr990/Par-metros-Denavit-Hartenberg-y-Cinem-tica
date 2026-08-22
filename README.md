@@ -29,12 +29,5 @@ Para que la asignación de sistemas de coordenadas sea correcta según la conven
 
 El siguiente código modela un robot planar de 2 grados de libertad utilizando un entorno como el Robotics Toolbox:
 
- clear 
- close
- clc
- L1=Revolute('a',20,'alpha',0,'d',0);
- L2=Revolute('a',10,'alpha',0,'d',0);
- bot=SerialLink([L1,L2]);
- bot.fkine([pi/2,0]) %
- bot.links
- bot.teach([pi/2,0], 'noname');
+<img width="650" height="312" alt="image" src="https://github.com/user-attachments/assets/2ffa6096-67f0-469d-85b4-968683687bca" />
+
