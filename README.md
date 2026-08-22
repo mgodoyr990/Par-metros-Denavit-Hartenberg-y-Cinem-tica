@@ -1,1 +1,1 @@
-# Par-metros-Denavit-Hartenberg-y-Cinem-tica
+# Parametros de Denavit-Hartenberg y Cinematica
