@@ -1,0 +1,15 @@
+clear
+close
+clc
+
+L1=Revolute('a',1,'alpha',0,'d',1);
+L2=Revolute('a',0,'alpha',pi/2,'d',0);
+L3=Prismatic('a',0.5,'alpha',0,'theta',pi/2, 'qlim',[1, 5]);% qlim es el grado de libertad de la articulacion prismatica
+
+bot=SerialLink([L1,L2,L3]);
+
+
+
+bot.fkine([0,0,0]) %Permite obtener la cinematica segun los parametros entregados 0,0,0
+bot.links %muestra los parametros D.H
+bot.teach([0,0,0], 'noname'); %permite simular al robot de manera didactica 
