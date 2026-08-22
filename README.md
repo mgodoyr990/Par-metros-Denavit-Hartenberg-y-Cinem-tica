@@ -29,7 +29,7 @@ Para que la asignación de sistemas de coordenadas sea correcta según la conven
 
 El siguiente código modela un robot planar de 2 grados de libertad utilizando un entorno como el Robotics Toolbox:
 
- clear
+ clear 
  close
  clc
  L1=Revolute('a',20,'alpha',0,'d',0);
