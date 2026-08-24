@@ -34,9 +34,8 @@ El siguiente código modela un robot planar de 2 grados de libertad utilizando u
 ### Análisis y funciones línea por línea:
 
 - clear, close, clc: Inicializan el entorno de trabajo. clear limpia el workspace de variables previas, close cierra ventanas de figuras abiertas, y clc limpia la consola de comandos.
-  ### Revolute (...): Declara que el eslabón tiene un grado de libertad rotacional. (L1 = Revolute('a',20,'alpha',0,'d',0);)
-  Crea los eslabones del robot estableciendo que sus articulaciones son de tipo rotacional (Revolute). Aquí se introducen los parámetros D-H estáticos: las longitudes de los
-eslabones a1= 20 y a2= 10(...). Como se trata de un robot planar (movimiento en un solo plano 2D), la torsión (α) y el desfase a lo largo del eje de giro (d) son 0. El parámetro variable en este caso será θ (calculado en las funciones posteriores).
+### Revolute (...): Declara que el eslabón tiene un grado de libertad rotacional. (L1 = Revolute('a',20,'alpha',0,'d',0);)
+  Crea los eslabones del robot estableciendo que sus articulaciones son de tipo rotacional (Revolute). Aquí se introducen los parámetros D-H estáticos: las longitudes de los eslabones a1= 20 y a2= 10(...).El parámetro variable en este caso será θ (calculado en las funciones posteriores).
 
 - Para el caso de articulaciones Prismaticas:
 #### Prismatic(...) o Pris(...): Declara que el eslabón posee un grado de libertad lineal. (L3 = Prismatic('theta', 0, 'a', 0, 'alpha', -pi/2, 'qlim', [0, 50]); )
