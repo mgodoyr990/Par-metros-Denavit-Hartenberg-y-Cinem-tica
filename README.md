@@ -37,7 +37,12 @@ El siguiente código modela un robot planar de 2 grados de libertad utilizando u
 - L1 = Revolute('a',20,'alpha',0,'d',0); y L2 = Revolute(...);: Crean los eslabones del robot estableciendo que sus articulaciones son de tipo rotacional (Revolute). Aquí se introducen los parámetros D-H estáticos: las longitudes de los
 eslabones a1= 20 y a2= 10. Como se trata de un robot planar (movimiento en un solo plano 2D), la torsión (α) y el desfase a lo largo del eje de giro (d) son 0. El parámetro variable en este caso será θ (calculado en las funciones posteriores).
 - Para el caso de articulaciones Prismaticas:
-  #### Prismatic(...) o Pris(...): Declara que el eslabón posee un grado de libertad lineal.
+  #### Prismatic(...) o Pris(...): Declara que el eslabón posee un grado de libertad lineal. (L3 = Prismatic('theta', 0, 'a', 0, 'alpha', -pi/2, 'qlim', [0, 50]); )
+'theta', 0: A diferencia de la función Revolute donde definíamos d, aquí establecemos theta como un valor fijo (en este caso 0 radianes), ya que la articulación no girará.
+'qlim', [0, 50]: Este parámetro (límites de la articulación) es fundamental al programar prismáticas. Define la extensión mecánica máxima y mínima del actuador lineal (por ejemplo, un cilindro neumático o un riel que puede desplazarse desde 0 hasta 50 unidades de longitud). Evita que en la simulación el eslabón se extienda hasta el infinito.
+Evaluación (fkine / teach): Cuando pasas el vector de coordenadas a funciones como fkine o usas la interfaz teach, el valor ingresado para este eslabón específico ya no se interpreta en radianes o grados, sino en unidades de longitud (milímetros, centímetros o metros, dependiendo de la escala de tu modelo).
+
+  
 - bot = SerialLink([L1,L2]);: Une secuencialmente los eslabones definidos (L1 y L2) para construir el objeto del robot completo como una cadena cinemática serial.
 - bot.fkine([pi/2,0]): Evalúa la cinemática directa (Forward Kinematics). Al entregarle el vector de coordenadas articulares q = [π/2, 0] (es decir, 90° para la primera articulación y 0° para la segunda), la función retorna la matriz de transformación homogénea que indica la posición y orientación final del extremo del robot.
 - bot.links: Despliega en la ventana de comandos un arreglo estructurado (o tabla) que resume los parámetros Denavit-Hartenberg configurados para todos los eslabones de la cadena cinemática.
