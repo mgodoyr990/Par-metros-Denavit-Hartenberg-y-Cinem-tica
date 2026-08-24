@@ -38,7 +38,7 @@ El siguiente código modela un robot planar de 2 grados de libertad utilizando u
   Crea los eslabones del robot estableciendo que sus articulaciones son de tipo rotacional (Revolute). Aquí se introducen los parámetros D-H estáticos: las longitudes de los eslabones a1= 20 y a2= 10(...).El parámetro variable en este caso será θ (calculado en las funciones posteriores).
 
 - Para el caso de articulaciones Prismaticas:
-#### Prismatic(...) o Pris(...): Declara que el eslabón posee un grado de libertad lineal. (L3 = Prismatic('theta', 0, 'a', 0, 'alpha', -pi/2, 'qlim', [0, 50]); )
+#### Prismatic(...) o Pris(...): Declara que el eslabón posee un grado de libertad lineal. (L3 = Prismatic('theta', 0, 'a', 0, 'alpha', -pi/2, 'qlim', [0, 50]);)
 - 'theta', 0: A diferencia de la función Revolute donde definíamos d, aquí establecemos theta como un valor fijo (en este caso 0 radianes), ya que la articulación no girará.
 - 'qlim', [0, 50]: Este parámetro (límites de la articulación) es fundamental al programar prismáticas. Define la extensión mecánica máxima y mínima del actuador lineal (por ejemplo, un cilindro neumático o un riel que puede desplazarse desde 0 hasta 50 unidades de longitud). Evita que en la simulación el eslabón se extienda hasta el infinito.
   
